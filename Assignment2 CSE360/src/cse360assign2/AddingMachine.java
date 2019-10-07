@@ -8,35 +8,40 @@ package cse360assign2;
 public class AddingMachine 
 {
 
-	private int total;//Creates private int variable
+	private int total;//Creates private int variable for total
+	private String history = "0";//Creates private string variable for history
 	
 	public AddingMachine () 
 	{
-		total = 0;  // not needed - included for clarity
+		total = 0;
 	}
 	
-	public int getTotal ()
+	public int getTotal()
 	{
-		return 0;
+		return total;
 	}
 	
-	public void add (int value) 
+	public void add(int value) 
 	{
-		
+		total += value;
+		history = history + " + " + Integer.toString(value);
 	}
 	
-	public void subtract (int value)
+	public void subtract(int value)
 	{
-		
+		total -= value;
+		history = history + " - " + Integer.toString(value);
 	}
 		
-	public String toString ()
+	public String toString()
 	{
-		return "";
+		return history;
 	}
 
 	public void clear()
 	{
-	
+		total = 0;
+		history = "0";
 	}
 }
+
